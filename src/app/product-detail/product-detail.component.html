@@ -1,11 +1,14 @@
 <div class="row">
-  <div class="col-6">
-    <img src="{{product.img}}" alt="" class="img-fluid">
+    <div *ngIf="product">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" alt=""></a>
+        <div class="card-body">
+            <h4 class="card-title">
+            <a href="#">{{product.name}}</a>
+            </h4>
+            <h5>${{product.price}}</h5>
+            <p>{{product.desc}}</p>
+        </div>
+        </div>
+    </div>
   </div>
-  <div class="col-6">
-    <h2>{{product.name}}</h2>
-    <span>{{product.price}}</span>
-    <p>{{product.desc}}</p>
-    <p>Tình trạng: {{ product.status ? 'Còn hàng' : 'Hết hàng'}}</p>
-  </div>
-</div>
