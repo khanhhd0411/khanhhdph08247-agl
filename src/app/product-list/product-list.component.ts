@@ -15,16 +15,10 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.products = this.productService.getProducts();
   }
-
-
-
-  
-  // products;
-  // selected: Product;
-  // showDetail(product){
-  //   this.selected = product;
-  //   console.log(this.selected);
-  // }
+   selected: Product;
+  showDetail(product) {
+    this.selected = product;
+  }
   removeItem(id){
     this.products = this.productService.removeProduct(id);
     // this.products = this.products.filter(product => product.id != id)
