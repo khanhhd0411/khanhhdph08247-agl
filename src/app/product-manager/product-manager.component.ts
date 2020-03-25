@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../Product';
 import { ProductService } from '../services/product.service'
 
@@ -17,19 +17,11 @@ export class ProductManagerComponent implements OnInit {
   ngOnInit(): void {
     this.products = this.productService.getProducts();
   }
-
-
-
-  
-  // products;
-  // selected: Product;
-  // showDetail(product){
-  //   this.selected = product;
-  //   console.log(this.selected);
-  // }
+   selected: Product;
+  showDetail(product) {
+    this.selected = product;
+  }
   removeItem(id){
     this.products = this.productService.removeProduct(id);
-    // this.products = this.products.filter(product => product.id != id)
   }
-
 }
